@@ -60,7 +60,7 @@
                             {{ $data->updated_at->diffForHumans() }}
                         </td>
                         <td>
-                            <form action="/daai_tv/{{ $data->id }}" method="post" class="d-inline">
+                            <form action="/dashboard/daaitv/{{ $data->id }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-sm btn-danger"

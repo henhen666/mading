@@ -40,7 +40,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::resource('/dashboard/articles', DashboardArticlesController::class)->middleware('auth');
 Route::resource('/dashboard/pengumuman', DashboardPengumumanController::class)->middleware('auth');
 Route::resource('/dashboard/advertisement', DashboardAdvertisementController::class)->middleware('auth');
-Route::resource('/dashboard/daai_tv', DashboardDAAIController::class)->middleware('auth');
+Route::resource('/dashboard/daaitv', DashboardDAAIController::class)->middleware('auth');
 Route::resource('/dashboard/rekap_absen', DashboardRekapAbsenController::class)->middleware('auth');
 Route::resource('/dashboard/users', DashboardUsersController::class)->middleware('auth');
 
@@ -50,9 +50,3 @@ Route::get('/pengumuman/truncate', [DashboardPengumumanController::class, 'trunc
 Route::get('/advertisement/truncate/', [DashboardAdvertisementController::class, 'truncate'])->middleware('auth');
 Route::get('/daai_tv/truncate', [DashboardDAAIController::class, 'truncate'])->middleware('auth');
 Route::get('/rekap_absen/truncate', [DashboardRekapAbsenController::class, 'truncate'])->middleware('auth');
-
-// sdelete DAAI TV Link
-Route::delete('/daai_tv/{daaitv:id}', function (DaaiTV $daaitv) {
-    DaaiTV::destroy($daaitv->id);
-    return back()->with('success', 'Link Berhasil Dihapus!');
-})->middleware('auth');

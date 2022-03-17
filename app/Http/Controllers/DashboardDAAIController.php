@@ -89,9 +89,10 @@ class DashboardDAAIController extends Controller
      * @param  \App\Models\DaaiTV  $daaiTV
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DaaiTV $daaiTV)
+    public function destroy(DaaiTV $daaitv)
     {
-        // 
+        DaaiTV::destroy($daaitv->id);
+        return back()->with('success', 'Link Berhasil Dihapus!');
     }
 
     public function truncate()

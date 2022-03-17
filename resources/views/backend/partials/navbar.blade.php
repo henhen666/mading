@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navigation {{ Request::is('dashboard/daai_tv*') ? 'active' : '' }}"
+                <a class="nav-link navigation {{ Request::is('dashboard/daaitv*') ? 'active' : '' }}"
                     href="/dashboard/daai_tv">
                     <span data-feather="tv"></span>
                     DAAI TV
